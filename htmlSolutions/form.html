@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey form</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            font-family: 'times new roman', sans-serif;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #5e6aed;
+            display: grid;
+            height: 100vh;
+            place-items: center;
+            font-size: 18px;
+        }
+
+        .main {
+            width: 700px;
+            height: 600px;
+            background-color: white;
+            margin: 0;
+            padding: 16px;
+            box-shadow: 20px 20px 20px 0px rgba(0, 0, 0, 0.7);
+            border-radius: 5px;
+        }
+        .container{
+            margin: 25px;
+        }
+
+        h1 {
+            color: black;
+            margin: 5px;
+            padding: 5px;
+            font-size: 3rem;
+        }
+
+        input[type="text"]{
+            width: 305px;
+            padding: 10px;
+            margin: 5px 0px;
+            display: inline-block;
+            border: 1px solid black;
+        }
+        .email {
+            margin-left: 267px;
+        }
+        input[type="radio"]{
+            margin: 5px 0px 20px 0px;
+        }
+        input[type="date"]{
+            width: 200px;
+            height: 40px;
+            margin: 5px 0;
+            border: 1px solid black;
+        }
+        button{
+            background-color: #5e6aed;
+            color: white;
+            width: 60px;
+            height: 35px;
+            border: none;
+            border-radius: 2px;
+            font-size: 18px;
+            margin: 13px 10px;
+            padding: 0px;
+            cursor: pointer;
+        }
+        button:hover{
+            opacity: 1;
+            background-color: #4855e0;
+            color: white;
+        }
+        input[type="tel"]{
+            width: 200px;
+            font-size: 18px;
+            padding: 5px;
+            margin: 13px 0px 15px 0px;
+            display: inline-block;
+            border: 1px solid black;
+        }
+        select{
+            width: 200px;
+            padding: 10px;
+            margin: 10px 0px 0px 0px;
+            display: inline-block;
+            border: 1px solid black;
+            font-size: 18px;
+        }
+        p{
+            margin-top: 15px;
+        }
+        
+        
+        
+        
+    </style>
+</head>
+
+<body>
+    <h1>Customer Survey Form</h1>
+    <form action="get" class="main">
+        <div class="container">
+            <label for="name"><b>Name</b></label>
+            <label for="email" class="email"><b>Email</b></label>
+            <br>
+            <input type="text" placeholder="Enter full name" id="name" name="name" required>
+            <input type="text" placeholder="Enter your email" id="email" name="email" required>
+            <br>
+            <p><b>Select your gender</b></p>
+            <br>
+            <input type="radio" name="gender" id="male" value="male">
+            <label for="male">Male</label>
+            <input type="radio" name="gender" id="female" value="female">
+            <label for="female">Female</label>
+            <input type="radio" name="gender" id="transgender" value="transgender">
+            <label for="transgender">Transgender</label>
+            <br>
+            <p><b>Select your profession.</b></p>
+            <br>
+            <input type="radio" name="profession" id="student" value="student">
+            <label for="student" >Student</label>
+            <input type="radio" name="profession" id="professional" value="professional">
+            <label for="professional">Professional</label>
+            <br>
+            <label for="phone"><b>Enter your mobile number.</b></label>
+            <br>
+            <input type="tel" id="phone" name="phone" pattern="[0-9]{5}-[0-9]{5}" required>
+            <br>
+            <label for="birthday"><b>Enter your DOB.</b></label>
+            <br>
+            <input type="date" id="birthday" name="birthday" id="birthday">
+            <br>
+            <label for="country"><b>Select your country.</b></label>
+            <br>
+            <select name="country" id="country">
+                <option value="select">Select</option>
+                <option value="Afghanistan">Afghanistan</option>
+                <option value="Albania">Albania</option>
+                <option value="Australia">Australia</option>
+                <option value="Bhutan">Bhutan</option>
+                <option value="Brazil">Brazil</option>
+                <option value="Canada">Canada</option>
+                <option value="China">China</option>
+                <option value="Dominica">Dominica</option>
+                <option value="Denmark">Denmark</option>
+                <option value="France">France</option>
+                <option value="Greece">	Greece</option>
+                <option value="Hungary">Hungary</option>
+                <option value="Iceland">Iceland</option>
+                <option value="India">India</option>
+                <option value="Jamaica">Jamaica</option>
+                <option value="Japan">Japan</option>
+                <option value="United Kingdom">United Kingdom</option>
+                <option value="Zambia">Zambia</option>
+            </select>
+            <br>
+            <button type="submit" value="submit">Submit</button>
+            <button type="reset" value="reset">Reset</button>
+
+        </div>
+    </form>
+    <script>
+        const form = document.querySelector('form')
+        form.addEventListener('submit', (event) => {
+            event.preventDefault();
+            form.reset();
+        })
+    </script>
+
+</body>
+
+</html>
